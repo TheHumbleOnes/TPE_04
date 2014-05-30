@@ -14,7 +14,10 @@ public enum Altersfreigabe {
        this.freigabe = freigabe;
    }
    
-   
+   @Override
+   public String toString(){
+       return freigabe;
+   }
         
     
 }

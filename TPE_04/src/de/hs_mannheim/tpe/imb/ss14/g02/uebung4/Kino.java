@@ -8,7 +8,28 @@ public class Kino {
     private Saal saal;
     
     
-    
+    public Kino(String name, String Stadt, Saal saal){
+    	this.name = name;
+    	this.Stadt = Stadt;
+    	this.saal = saal;
+    	
+    }
+
+
+	public String getName() {
+		return name;
+	}
+
+	public String getStadt() {
+		return Stadt;
+	}
+
+	public Saal getSaal() {
+		return saal;
+	}
+
+
+	
     
     
     

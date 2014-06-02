@@ -5,7 +5,7 @@ import java.util.Map;
 public class Kino {
     private String name;
     private String Stadt;
-    private int saele;
+    private Saal saele;
     
     
     

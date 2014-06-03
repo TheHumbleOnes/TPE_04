@@ -1,6 +1,6 @@
 package de.hs_mannheim.tpe.imb.ss14.g02.uebung4;
 
-public enum Altersfreigabe {
+public enum Rating {
 
    AB_0("Ohne Altersbeschraenkung"),
    AB_6("Ab 6 Jahren"),
@@ -10,7 +10,7 @@ public enum Altersfreigabe {
    
    private final String freigabe;
    
-   private Altersfreigabe(final String freigabe){
+   private Rating(final String freigabe){
        this.freigabe = freigabe;
    }
    

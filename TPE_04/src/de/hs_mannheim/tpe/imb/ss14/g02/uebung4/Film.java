@@ -4,30 +4,29 @@ public class Film {
     private String name;
     private int laufzeit;
     private String altersfreigabe;
-    
-    public Film(String name, int laufzeit, String altersfreigabe){
-    	this.name = name;
-    	this.laufzeit = laufzeit;
-    	this.altersfreigabe = altersfreigabe;
-    	
+
+    public Film(String name, int laufzeit, String altersfreigabe) {
+        this.name = name;
+        this.laufzeit = laufzeit;
+        this.altersfreigabe = altersfreigabe;
+
     }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
+    public int getLaufzeit() {
+        return laufzeit;
+    }
 
-	public int getLaufzeit() {
-		return laufzeit;
-	}
+    public String getAltersfreigabe() {
+        return altersfreigabe;
+    }
 
-	public String getAltersfreigabe() {
-		return altersfreigabe;
-	}
-
-	
-
+    public String toString() {
+        return (this.getName() + " [" + this.getAltersfreigabe() + "] "
+                + this.getLaufzeit() + "min");
+    }
 
 }
-
-

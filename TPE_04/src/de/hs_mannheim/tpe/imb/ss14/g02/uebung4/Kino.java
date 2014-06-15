@@ -10,11 +10,11 @@ public class Kino {
     private HashMap<Saal, Saal> saele = new HashMap();
     
     
-    public Kino(String name, String Stadt, Saal saal){
+    public Kino(String name, String Stadt, Saal[] saal){
     	this.name = name;
     	this.Stadt = Stadt;
     	this.saal = saal;
-    	
+    	//TODO muss Saal-Array annehmen
     }
 
     public void addSaal(Saal saal){

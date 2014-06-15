@@ -6,6 +6,8 @@ public class Kino {
     private String name;
     private String Stadt;
     private Saal saal;
+    //den value muss man gefügig noch ändern da bisher noch nicht klar ist für was man sie braucht
+    private HashMap<Saal, Saal> saele = new HashMap();
     
     
     public Kino(String name, String Stadt, Saal saal){
@@ -15,7 +17,13 @@ public class Kino {
     	
     }
 
-
+    public void addSaal(Saal saal){
+    saele.put(saal, saal);	
+    }
+    public HashMap<Saal,Saal> getseale(){
+    	return this.saele;
+    }
+    
 	public String getName() {
 		return name;
 	}

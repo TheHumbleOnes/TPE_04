@@ -5,22 +5,26 @@ import java.util.*;
 public class Kino {
     private String name;
     private String Stadt;
-    private Saal saal;
-    //den value muss man gefügig noch ändern da bisher noch nicht klar ist für was man sie braucht
-    private HashMap<Saal, Saal> saele = new HashMap();
+    private Film[] film;
+    private Saal[] saal;
+    private HashMap<Integer, Saal> saele = new HashMap();
     
     
-    public Kino(String name, String Stadt, Saal[] saal){
+    public Kino(String name, String Stadt, Film[] film, Saal[] saal){
     	this.name = name;
     	this.Stadt = Stadt;
     	this.saal = saal;
-    	//TODO muss Saal-Array annehmen
+    	this.film = film;
+    	
     }
 
-    public void addSaal(Saal saal){
-    saele.put(saal, saal);	
+  
+
+	public void addSaal(Saal saal){
+    saele.put(saal.hashCode(), saal);	
     }
-    public HashMap<Saal,Saal> getseale(){
+    
+    public HashMap<Integer, Saal> getSaele(){
     	return this.saele;
     }
     
@@ -32,13 +36,15 @@ public class Kino {
 		return Stadt;
 	}
 
-	public Saal getSaal() {
-		return saal;
-	}
-
+	
+	public void gesamtesProgramm() {
+		for (Film element : film) {
+			System.out.println(element.getStartzeit() + " -- "
+			        + element.getName());
 
 	
-    
+		}
+	}
     
     
     

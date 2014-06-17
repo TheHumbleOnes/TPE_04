@@ -83,23 +83,22 @@ public class Verwaltung {
         saele[2] = studio;
         saele[3] = kellerloch;
 
-        // cinemaxx.gesamtesProgramm();
-        // System.out.println();
-        // getAlleFilme();
-        // getAlleFilme(Sortieren.Name);
-        // System.out.println();
+         cinemaxx.gesamtesProgramm();
+         System.out.println();
+         getAlleFilme(Sortieren.Name);
+         System.out.println();
         getAlleFilme(Sortieren.Laufzeit);
-        // System.out.println();
+         System.out.println();
          getAlleFilme(Sortieren.Altersfreigabe);
-        // System.out.println();
-        // getFilmeFuerSaalMitZeiten(gruenerSaal);
+         System.out.println();
+         getFilmeFuerSaalMitZeiten(gruenerSaal);
 
     }
 
     private static void getAlleFilmeMitZeiten() {
         Comparator<Film> startzeit = new Film.FilmStartzeit();
         Arrays.sort(filme, startzeit);
-
+        System.out.println("Nach Startzeit sortiert:");
         for (int i = 0; i < filme.length; i++) {
             System.out.println(filme[i].toString());
         }
@@ -154,14 +153,17 @@ public class Verwaltung {
         default:
             Comparator<Film> name = new Film.FilmName();
             Arrays.sort(einzelneFilme, name);
+            System.out.println("Nach Titel sortiert:");
             break;
         case Altersfreigabe:
             Comparator<Film> altersfreigabe = new Film.FilmRating();
             Arrays.sort(einzelneFilme, altersfreigabe);
+            System.out.println("Nach Altersfreigabe sortiert:");
             break;
         case Laufzeit:
             Comparator<Film> laufzeit = new Film.FilmLaufzeit();
             Arrays.sort(einzelneFilme, laufzeit);
+            System.out.println("Nach Laufzeit sortiert:");
             break;
         }
         for (int i = 0; i < einzelneFilme.length; i++) {
@@ -189,14 +191,5 @@ public class Verwaltung {
         return true;
     }
 
-    public static void toString(Kino kino) {
 
-        System.out.println(kino.getName());
-
-        for (int i = 0; i < saele.length; i++) {
-            getFilmeFuerSaalMitZeiten(saele[i]);
-            System.out.println();
-        }
-
-    }
 }

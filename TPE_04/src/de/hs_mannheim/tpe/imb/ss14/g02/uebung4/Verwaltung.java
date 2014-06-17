@@ -6,10 +6,14 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
+
+
 public class Verwaltung {
 
-	static Film[] filmecinemaxx = new Film[14];
-	static Saal[] saelecinemaxx = new Saal[4];
+	static Film[] cinemaxxProgramm = new Film[14];
+	static Saal[] cinemaxxSaele = new Saal[4];
 
 	public static void main(String[] args) throws wrongDateExeption {
 
@@ -18,62 +22,56 @@ public class Verwaltung {
 		Saal studio = new Saal("Studio", 150);
 		Saal kellerloch = new Saal("Kellerloch", 30);
 
-		filmecinemaxx[0] = new Film("Batman Begins", "134 Minuten", "ab 12 Jahre",
-				new Zeit(14, 00), blauerSaal);
-		filmecinemaxx[1] = new Film("Batman Begins", "134 Minuten", "ab 12 Jahre",
-				new Zeit(17, 00), blauerSaal);
-		filmecinemaxx[2] = new Film("Batman Begins", "134 Minuten", "ab 12 Jahre",
-				new Zeit(20, 00), blauerSaal);
-		filmecinemaxx[3] = new Film("Batman Begins", "134 Minuten", "ab 12 Jahre",
-				new Zeit("23:00"), blauerSaal);
-		filmecinemaxx[4] = new Film("Ice Age 3", "90 Minuten",
-				"ab 0  Jahre (Ohne Altersbeschraenkung)", new Zeit(17, 00),
-				gruenerSaal);
-		filmecinemaxx[5] = new Film("Ice Age 3", "90 Minuten",
-				"ab 0  Jahre (Ohne Altersbeschraenkung)", new Zeit(19, 00),
-				gruenerSaal);
-		filmecinemaxx[6] = new Film("Ice Age 3", "90 Minuten",
-				"ab 0  Jahre (Ohne Altersbeschraenkung)", new Zeit(15, 00),
-				studio);
-		filmecinemaxx[7] = new Film("Barbie - Die Prinzessinnen-Akademie",
-				"81 Minuten", "ab 0  Jahre (Ohne Altersbeschraenkung)", new Zeit(
-						15, 00), gruenerSaal);
-		filmecinemaxx[8] = new Film("Machete", "100 Minuten",
-				"ab 18 Jahre (keine Jugendfreigabe)", new Zeit(21, 00),
-				gruenerSaal);
-		filmecinemaxx[9] = new Film("Trainspotting", "89 Minuten",
-				"ab 18 Jahre (keine Jugendfreigabe)", new Zeit(17, 00), studio);
-		filmecinemaxx[10] = new Film("Pulp Fiction", "148 Minuten", "ab 16 Jahre",
-				new Zeit(20, 00), studio);
-		filmecinemaxx[11] = new Film("From Dusk till Dawn", "87 Minuten",
-				"ab 16 Jahre", new Zeit(23, 00), studio);
-		filmecinemaxx[12] = new Film("Chocolat", "121 Minuten", "ab 06 Jahre",
-				new Zeit(20, 00), kellerloch);
-		filmecinemaxx[13] = new Film("Trainspotting", "89 Minuten",
-				"ab 18 Jahre (keine Jugendfreigabe)", new Zeit(23, 00),
-				kellerloch);
+		cinemaxxProgramm[0] = new Film("Batman Begins", "134 Minuten",
+				Rating.AB_12, new Zeit("14:00"), blauerSaal);
+		cinemaxxProgramm[1] = new Film("Batman Begins", "134 Minuten",
+				Rating.AB_12, new Zeit("17:00"), blauerSaal);
+		cinemaxxProgramm[2] = new Film("Batman Begins", "134 Minuten",
+				Rating.AB_12, new Zeit("20:00"), blauerSaal);
+		cinemaxxProgramm[3] = new Film("Batman Begins", "134 Minuten",
+				Rating.AB_12, new Zeit("21:00"), blauerSaal);
+		cinemaxxProgramm[4] = new Film("Ice Age 3", "90 Minuten", Rating.AB_0,
+				new Zeit("17:00"), gruenerSaal);
+		cinemaxxProgramm[5] = new Film("Ice Age 3", "90 Minuten", Rating.AB_0,
+				new Zeit("19:00"), gruenerSaal);
+		cinemaxxProgramm[6] = new Film("Ice Age 3", "90 Minuten", Rating.AB_0,
+				new Zeit("15:00"), studio);
+		cinemaxxProgramm[7] = new Film("Barbie - Die Prinzessinnen-Akademie",
+				"81 Minuten", Rating.AB_0, new Zeit("15:00"), gruenerSaal);
+		cinemaxxProgramm[8] = new Film("Machete", "100 Minuten", Rating.AB_16,
+				new Zeit("21:00"), gruenerSaal);
+		cinemaxxProgramm[9] = new Film("Trainspotting", "89 Minuten",
+				Rating.AB_18, new Zeit("17:00"), studio);
+		cinemaxxProgramm[10] = new Film("Pulp Fiction", "148 Minuten",
+				Rating.AB_16, new Zeit("20:00"), studio);
+		cinemaxxProgramm[11] = new Film("From Dusk till Dawn", "87 Minuten",
+				Rating.AB_16, new Zeit("23:00"), studio);
+		cinemaxxProgramm[12] = new Film("Chocolat", "121 Minuten", Rating.AB_6,
+				new Zeit("20:00"), kellerloch);
+		cinemaxxProgramm[13] = new Film("Trainspotting", "89 Minuten",
+				Rating.AB_18, new Zeit("23:00"), kellerloch);
 
 		ArrayList<Film> blauerSaalList = new ArrayList<Film>();
-		blauerSaalList.add(filmecinemaxx[0]);
-		blauerSaalList.add(filmecinemaxx[1]);
-		blauerSaalList.add(filmecinemaxx[2]);
-		blauerSaalList.add(filmecinemaxx[3]);
+		blauerSaalList.add(cinemaxxProgramm[0]);
+		blauerSaalList.add(cinemaxxProgramm[1]);
+		blauerSaalList.add(cinemaxxProgramm[2]);
+		blauerSaalList.add(cinemaxxProgramm[3]);
 
 		ArrayList<Film> gruenerSaalList = new ArrayList<Film>();
-		gruenerSaalList.add(filmecinemaxx[4]);
-		gruenerSaalList.add(filmecinemaxx[5]);
-		gruenerSaalList.add(filmecinemaxx[7]);
-		gruenerSaalList.add(filmecinemaxx[8]);
+		gruenerSaalList.add(cinemaxxProgramm[4]);
+		gruenerSaalList.add(cinemaxxProgramm[5]);
+		gruenerSaalList.add(cinemaxxProgramm[7]);
+		gruenerSaalList.add(cinemaxxProgramm[8]);
 
 		ArrayList<Film> studioList = new ArrayList<Film>();
-		studioList.add(filmecinemaxx[6]);
-		studioList.add(filmecinemaxx[9]);
-		studioList.add(filmecinemaxx[10]);
-		studioList.add(filmecinemaxx[11]);
+		studioList.add(cinemaxxProgramm[6]);
+		studioList.add(cinemaxxProgramm[9]);
+		studioList.add(cinemaxxProgramm[10]);
+		studioList.add(cinemaxxProgramm[11]);
 
 		ArrayList<Film> kellerlochList = new ArrayList<Film>();
-		kellerlochList.add(filmecinemaxx[12]);
-		kellerlochList.add(filmecinemaxx[13]);
+		kellerlochList.add(cinemaxxProgramm[12]);
+		kellerlochList.add(cinemaxxProgramm[13]);
 
 		Map<Saal, ArrayList> karteSaal = new HashMap<Saal, ArrayList>();
 
@@ -83,88 +81,102 @@ public class Verwaltung {
 		karteSaal.put(kellerloch, kellerlochList);
 
 		Kino cinemaxxMannheim = new Kino("Cinemaxx Mannheim", "Mannheim",
-				filmecinemaxx, saelecinemaxx);
+				cinemaxxProgramm, cinemaxxSaele);
 
-		saelecinemaxx[0] = blauerSaal;
-		saelecinemaxx[1] = gruenerSaal;
-		saelecinemaxx[2] = studio;
-		saelecinemaxx[3] = kellerloch;
+		cinemaxxSaele[0] = blauerSaal;
+		cinemaxxSaele[1] = gruenerSaal;
+		cinemaxxSaele[2] = studio;
+		cinemaxxSaele[3] = kellerloch;
+		
+//		cinemaxxMannheim.gesamtesProgramm();
+//		System.out.println();
+//		getAlleFilme();
+//		getAlleFilme(Sortieren.Name);
+//		System.out.println();
+//		getAlleFilme(Sortieren.Laufzeit);
+//		System.out.println();
+//		getAlleFilme(Sortieren.Altersfreigabe);
+//		System.out.println();
+		getFilmeFuerSaalMitZeiten(blauerSaal);
+		
 	}
-	private static void getAlleFilmeMitZeiten() {
-		Comparator<Film> startzeit = new Film.StartFilmComperator();
-		Arrays.sort(filmecinemaxx, startzeit);
 
-		for (int i = 0; i < filmecinemaxx.length; i++) {
-			System.out.println(filmecinemaxx[i].toString());
+	private static void getAlleFilmeMitZeiten() {
+		Comparator<Film> startzeit = new Film.FilmStartzeit();
+		Arrays.sort(cinemaxxProgramm, startzeit);
+
+		for (int i = 0; i < cinemaxxProgramm.length; i++) {
+			System.out.println(cinemaxxProgramm[i].toString());
 		}
 		System.out.println();
 
 	}
 
 	private static void getFilmeFuerSaalMitZeiten(Saal k) {
-		int i = 0;
-		for (int j = 0; j < filmecinemaxx.length; j++) {
-			if ((filmecinemaxx[j].getSaal()).equals(k.getName())) {
-				i++;
+		int zaehler = 0;
+		for (int i = 0; i < cinemaxxProgramm.length; i++) {
+			if ((cinemaxxProgramm[i].getSaal()).equals(k.getName())) {
+				zaehler++;
 			}
 		}
-		Film[] temp = new Film[i];
-		int s = 0;
-		for (int j = 0; j < filmecinemaxx.length; j++) {
-			if (filmecinemaxx[i].getSaal().equals(k.getName())) {
-				temp[s] = filmecinemaxx[j];
-				s++;
+		Film[] temp = new Film[zaehler];
+		int z = 0;
+		for (int i = 0; i < cinemaxxProgramm.length; i++) {
+			if (cinemaxxProgramm[i].getSaal().equals(k.getName())) {
+				temp[z] = cinemaxxProgramm[i];
+				z++;
 			}
 		}
-		Comparator<Film> startzeit = new Film.StartFilmComperator();
-		Arrays.sort(filmecinemaxx, startzeit);
+		Comparator<Film> startzeit = new Film.FilmStartzeit();
+		Arrays.sort(cinemaxxProgramm, startzeit);
 
 		System.out.println("Saal " + "'" + k.getName() + "'  " + "("
 		        + k.getSeats() + " Plaetze)");
 
-		for (int j = 0; j < temp.length; j++) {
+		for (int i = 0; i < temp.length; i++) {
 			System.out.println(temp[i].toString());
 		}
 
 	}
 
 	private static void getAlleFilme() {
-		getAlleFilme(Sortierkriterium.Name);
+		getAlleFilme(Sortieren.Name);
 	}
 
-	private static void getAlleFilme(Sortierkriterium s) {
+	private static void getAlleFilme(Sortieren s) {
 		int count = 0;
 		Film[] einfacheFilme = new Film[0];
-		for (int j = 0; j < filmecinemaxx.length; j++) {
-			if (doppeltest(filmecinemaxx[j].getName(), einfacheFilme)) {
+		for (int j = 0; j < cinemaxxProgramm.length; j++) {
+			if (doppeltest(cinemaxxProgramm[j].getName(), einfacheFilme)) {
 				einfacheFilme = arrayVergroessern(einfacheFilme);
-				einfacheFilme[count] = filmecinemaxx[j];
+				einfacheFilme[count] = cinemaxxProgramm[j];
 				count++;
 			}
 		}
 		switch (s) {
 
 		case Name:
-			Comparator<Film> name = new Film.TitelFilmComperator();
+			Comparator<Film> name = new Film.FilmName();
 			Arrays.sort(einfacheFilme, name);
 			break;
 		case Altersfreigabe:
-			Comparator<Film> altersfreigabe = new Film.AltersfreigabeComperator();
+			Comparator<Film> altersfreigabe = new Film.FilmRating();
 			Arrays.sort(einfacheFilme, altersfreigabe);
 			break;
 		case Laufzeit:
-			Comparator<Film> laufzeit = new Film.LaufzeitComperator();
+			Comparator<Film> laufzeit = new Film.FilmLaufzeit();
 			Arrays.sort(einfacheFilme, laufzeit);
 
 			break;
 		default:
-			Comparator<Film> name1 = new Film.TitelFilmComperator();
+			Comparator<Film> name1 = new Film.FilmName();
 			Arrays.sort(einfacheFilme, name1);
 
 		}
-//		for (int i = 0; i < einfacheFilme.length; i++) {
-//			System.out.println(einfacheFilme[i].ohneUhrzeit());
-//		} brauchen wir das wirklich?
+		 for (int i = 0; i < einfacheFilme.length; i++) {
+		 System.out.println(einfacheFilme[i].ohneUhrzeit());
+	 } 
+		 //brauchen wir das wirklich?
 	}
 
 	public static Film[] arrayVergroessern(Film[] oldArray) {
@@ -190,8 +202,8 @@ public class Verwaltung {
 
 		System.out.println(kino.getName());
 
-		for (int i = 0; i < saelecinemaxx.length; i++) {
-			getFilmeFuerSaalMitZeiten(saelecinemaxx[i]);
+		for (int i = 0; i < cinemaxxSaele.length; i++) {
+			getFilmeFuerSaalMitZeiten(cinemaxxSaele[i]);
 			System.out.println();
 		}
 

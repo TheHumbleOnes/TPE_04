@@ -1,10 +1,12 @@
 package de.hs_mannheim.tpe.imb.ss14.g02.uebung4;
 
-import java.util.HashMap;
+
 
 public class Zeit {
 	private int hour;
 	private int minute;
+	private String hhmm;
+	
 
 	public Zeit(String zeit) throws wrongDateExeption{
 		if(zeit.length()>5){
@@ -25,6 +27,7 @@ public class Zeit {
 		if(checkDate(hour, minute)){
 			this.hour = hour;
 			this.minute = minute;
+			
 		}
 	}
 	private boolean checkDate(int hour, int minute){
@@ -36,7 +39,12 @@ public class Zeit {
 		return true;
 	}
 	public String toString() {
-		return hour + ":" + minute;
+		if (minute < 10) {
+			this.hhmm = hour + ":" + "0" + minute;
+		} else {
+			this.hhmm = hour + ":" + minute;
+		}
+		return hhmm;
 
 	}
 

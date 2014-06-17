@@ -3,23 +3,25 @@ package de.hs_mannheim.tpe.imb.ss14.g02.uebung4;
 import java.util.Comparator;
 
 public class Film {
-    private String name;
-    private String laufzeit;
-    private String altersfreigabe;
-    private Zeit startzeit;
-    private Saal saal;
+	private String name;
+	private String laufzeit;
+	private Rating altersfreigabe;
+	private Zeit startzeit;
+	private Saal saal;
 
-    public Film(String name, String laufzeit, String altersfreigabe, Zeit startzeit, Saal saal) {
-        this.name = name;
-        this.laufzeit = laufzeit;
-        this.altersfreigabe = altersfreigabe;
-        this.startzeit = startzeit;
-        this.saal = saal;
+	public Film(String name, String laufzeit, Rating altersfreigabe,
+			Zeit startzeit, Saal saal) {
+		this.name = name;
+		this.laufzeit = laufzeit;
+		this.altersfreigabe = altersfreigabe;
+		this.startzeit = startzeit;
+		this.saal = saal;
 
-    }
-    static class TitelFilmComperator implements Comparator<Film> {
+	}
 
-		
+	static class FilmName implements Comparator<Film> {
+
+		@Override
 		public int compare(Film film1, Film film2) {
 			if (film1.getName() == null && film2.getName() == null) {
 				return 0;
@@ -34,12 +36,12 @@ public class Film {
 		}
 	}
 
-	static class AltersfreigabeComperator implements Comparator<Film> {
+	static class FilmRating implements Comparator<Film> {
 
 		@Override
 		public int compare(Film film1, Film film2) {
 			if (film1.getAltersfreigabe() == null
-			        && film2.getAltersfreigabe() == null) {
+					&& film2.getAltersfreigabe() == null) {
 				return 0;
 			}
 			if (film1.getAltersfreigabe() == null) {
@@ -48,16 +50,17 @@ public class Film {
 			if (film2.getAltersfreigabe() == null) {
 				return -1;
 			}
-			return film1.getAltersfreigabe().compareTo(film2.getAltersfreigabe());
+			return film1.getAltersfreigabe().compareTo(
+					film2.getAltersfreigabe());
 		}
 	}
 
-	static class StartFilmComperator implements Comparator<Film> {
+	static class FilmStartzeit implements Comparator<Film> {
 
 		@Override
 		public int compare(Film film1, Film film2) {
 			if (film1.getStartzeit().toString() == null
-			        && film2.getStartzeit().toString() == null) {
+					&& film2.getStartzeit().toString() == null) {
 				return 0;
 			}
 			if (film1.getStartzeit().toString() == null) {
@@ -66,12 +69,12 @@ public class Film {
 			if (film2.getStartzeit().toString() == null) {
 				return -1;
 			}
-			return film1.getStartzeit().toString().compareTo(
-			        film2.getStartzeit().toString());
+			return film1.getStartzeit().toString()
+					.compareTo(film2.getStartzeit().toString());
 		}
 	}
 
-	static class LaufzeitComperator implements Comparator<Film> {
+	static class FilmLaufzeit implements Comparator<Film> {
 
 		@Override
 		public int compare(Film film1, Film film2) {
@@ -87,7 +90,8 @@ public class Film {
 			return film1.getLaufzeit().compareTo(film2.getLaufzeit());
 		}
 	}
-    public Zeit getStartzeit() {
+
+	public Zeit getStartzeit() {
 		return startzeit;
 	}
 
@@ -96,20 +100,24 @@ public class Film {
 	}
 
 	public String getName() {
-        return name;
-    }
+		return name;
+	}
 
-    public String getLaufzeit() {
-        return laufzeit;
-    }
+	public String getLaufzeit() {
+		return laufzeit;
+	}
 
-    public String getAltersfreigabe() {
-        return altersfreigabe;
-    }
+	public Rating getAltersfreigabe() {
+		return altersfreigabe;
+	}
 
-    public String toString() {
-        return (this.getName() + " [" + this.getAltersfreigabe() + "] "
-                + this.getLaufzeit() + "min");
-    }
-
+	public String toString() {
+		String ausgabe = this.startzeit + " -- " + this.name
+		        + this.altersfreigabe + this.laufzeit;
+		return ausgabe;
+	}
+	public String ohneUhrzeit() {
+		String ausgabe = this.name + this.altersfreigabe + this.laufzeit;
+		return ausgabe;
+	}
 }

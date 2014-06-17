@@ -7,7 +7,7 @@ public class Kino {
     private String Stadt;
     private Film[] film;
     private Saal[] saal;
-    private HashMap<Integer, Saal> saele = new HashMap();
+    private HashMap<Integer, Saal> saele = new HashMap<>();
     
     
     public Kino(String name, String Stadt, Film[] film, Saal[] saal){

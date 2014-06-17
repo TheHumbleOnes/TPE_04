@@ -95,8 +95,8 @@ public class Film {
 		return startzeit;
 	}
 
-	public Saal getSaal() {
-		return saal;
+	public String getSaal() {
+		return this.saal.getName();
 	}
 
 	public String getName() {
@@ -112,12 +112,12 @@ public class Film {
 	}
 
 	public String toString() {
-		String ausgabe = this.startzeit + " -- " + this.name
-		        + this.altersfreigabe + this.laufzeit;
+		String ausgabe = this.startzeit + " -- " + this.name + " "
+		        + this.altersfreigabe + " " + this.laufzeit;
 		return ausgabe;
 	}
 	public String ohneUhrzeit() {
-		String ausgabe = this.name + this.altersfreigabe + this.laufzeit;
+		String ausgabe = this.name + " " + this.altersfreigabe + " " + this.laufzeit;
 		return ausgabe;
 	}
 }

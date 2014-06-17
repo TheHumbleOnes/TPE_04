@@ -38,15 +38,17 @@ public class Kino {
 
 	
 	public void gesamtesProgramm() {
-		for (Film element : film) {
-			System.out.println(element.getStartzeit() + " -- "
-			        + element.getName());
+	    System.out.println(name + " in " + Stadt);
+		for(Saal s : saal){
+		    
+		    Verwaltung.getFilmeFuerSaalMitZeiten(s);
+		    System.out.println();
 
 	
 		}
-	}
+	}}
     
     
     
 
-}
+

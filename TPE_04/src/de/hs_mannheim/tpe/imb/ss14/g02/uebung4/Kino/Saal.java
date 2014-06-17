@@ -19,14 +19,6 @@ public class Saal {
         return seats;
     }
 
-    private void setName(String name) {
-        this.name = name;
-    }
-
-    private void setSeats(int seats) {
-        this.seats = seats;
-    }
-
     public String toString() {
         return ("Saal " + "'" + this.getName() + "'" + " (" + this.getSeats() + " Plaetze)");
     }

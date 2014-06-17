@@ -31,8 +31,7 @@ public class CollatzMethode implements Runnable {
             maxLength(i, collatz);
 
         }
-        // System.out.println("Längste Folge mit " + iterierungen +
-        // " Iterationen bei Zahl " + max);
+        
 
     }
 

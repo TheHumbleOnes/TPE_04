@@ -7,10 +7,10 @@ public class CollatzThread {
 
     public static void main(String[] args) throws InterruptedException {
 
-        CollatzMethode c1 = new CollatzMethode(1, 250000);
-        CollatzMethode c2 = new CollatzMethode(250001, 500000);
-        CollatzMethode c3 = new CollatzMethode(500001, 750000);
-        CollatzMethode c4 = new CollatzMethode(700001, 1000000);
+        CollatzMethode c1 = new CollatzMethode(1, 25000000);
+        CollatzMethode c2 = new CollatzMethode(25000001, 50000000);
+        CollatzMethode c3 = new CollatzMethode(50000001, 75000000);
+        CollatzMethode c4 = new CollatzMethode(70000001, 100000000);
 
         Thread t1 = new Thread(c1);
         Thread t2 = new Thread(c2);

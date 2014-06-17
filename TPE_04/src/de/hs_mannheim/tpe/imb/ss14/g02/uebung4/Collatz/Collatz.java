@@ -7,7 +7,7 @@ public class Collatz {
 
 	public static void main(String[] args) {
 
-		coll(5);
+		coll(200);
 		Iterator<Long> i = new Iterator<Long>() {
 
 			private int counter = 0;

@@ -6,9 +6,10 @@ public class Collatz {
 	private static LinkedList<Long> list = new LinkedList<Long>();
 
 	public static void main(String[] args) {
-
-		coll(200);
-		
+		//Zahl mit der längesten folge
+		coll(999999);
+		System.out.println(list);
+		System.out.println(list.size());
 		
 		
 	}

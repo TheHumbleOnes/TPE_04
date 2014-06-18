@@ -18,33 +18,33 @@ public class Verwaltung {
         Saal studio = new Saal("Studio", 150);
         Saal kellerloch = new Saal("Kellerloch", 30);
 
-        filme[0] = new Film("Batman Begins", "134 Minuten", Rating.AB_12,
+        filme[0] = new Film("Batman Begins", "134", Rating.AB_12,
                 new Zeit("14:00"), blauerSaal);
-        filme[1] = new Film("Batman Begins", "134 Minuten", Rating.AB_12,
+        filme[1] = new Film("Batman Begins", "134", Rating.AB_12,
                 new Zeit("17:00"), blauerSaal);
-        filme[2] = new Film("Batman Begins", "134 Minuten", Rating.AB_12,
+        filme[2] = new Film("Batman Begins", "134", Rating.AB_12,
                 new Zeit("20:00"), blauerSaal);
-        filme[3] = new Film("Batman Begins", "134 Minuten", Rating.AB_12,
+        filme[3] = new Film("Batman Begins", "134", Rating.AB_12,
                 new Zeit("23:00"), blauerSaal);
-        filme[4] = new Film("Ice Age 3", "90 Minuten", Rating.AB_0, new Zeit(
+        filme[4] = new Film("Ice Age 3", "90", Rating.AB_0, new Zeit(
                 "17:00"), gruenerSaal);
-        filme[5] = new Film("Ice Age 3", "90 Minuten", Rating.AB_0, new Zeit(
+        filme[5] = new Film("Ice Age 3", "90", Rating.AB_0, new Zeit(
                 "19:00"), gruenerSaal);
-        filme[6] = new Film("Ice Age 3", "90 Minuten", Rating.AB_0, new Zeit(
+        filme[6] = new Film("Ice Age 3", "90", Rating.AB_0, new Zeit(
                 "15:00"), studio);
         filme[7] = new Film("Barbie - Die Prinzessinnen-Akademie",
-                "81 Minuten", Rating.AB_0, new Zeit("15:00"), gruenerSaal);
-        filme[8] = new Film("Machete", "100 Minuten", Rating.AB_16, new Zeit(
+                "81", Rating.AB_0, new Zeit("15:00"), gruenerSaal);
+        filme[8] = new Film("Machete", "100", Rating.AB_16, new Zeit(
                 "21:00"), gruenerSaal);
-        filme[9] = new Film("Trainspotting", "89 Minuten", Rating.AB_18,
+        filme[9] = new Film("Trainspotting", "89", Rating.AB_18,
                 new Zeit("17:00"), studio);
-        filme[10] = new Film("Pulp Fiction", "148 Minuten", Rating.AB_16,
+        filme[10] = new Film("Pulp Fiction", "148", Rating.AB_16,
                 new Zeit("20:00"), studio);
-        filme[11] = new Film("From Dusk till Dawn", "87 Minuten", Rating.AB_16,
+        filme[11] = new Film("From Dusk till Dawn", "87", Rating.AB_16,
                 new Zeit("23:00"), studio);
-        filme[12] = new Film("Chocolat", "121 Minuten", Rating.AB_6, new Zeit(
+        filme[12] = new Film("Chocolat", "121", Rating.AB_6, new Zeit(
                 "20:00"), kellerloch);
-        filme[13] = new Film("Trainspotting", "89 Minuten", Rating.AB_18,
+        filme[13] = new Film("Trainspotting", "89", Rating.AB_18,
                 new Zeit("23:00"), kellerloch);
 
         ArrayList<Film> blauerSaalList = new ArrayList<Film>();
@@ -83,15 +83,16 @@ public class Verwaltung {
         saele[2] = studio;
         saele[3] = kellerloch;
 
-         cinemaxx.gesamtesProgramm();
-         System.out.println();
-         getAlleFilme(Sortieren.Name);
-         System.out.println();
+//         cinemaxx.gesamtesProgramm();
+//         System.out.println();
+//         getAlleFilme(Sortieren.Name);
+//         System.out.println();
         getAlleFilme(Sortieren.Laufzeit);
-         System.out.println();
-         getAlleFilme(Sortieren.Altersfreigabe);
-         System.out.println();
-         getFilmeFuerSaalMitZeiten(gruenerSaal);
+//         System.out.println();
+//         getAlleFilme(Sortieren.Altersfreigabe);
+//         System.out.println();
+//         getFilmeFuerSaalMitZeiten(gruenerSaal);
+
 
     }
 

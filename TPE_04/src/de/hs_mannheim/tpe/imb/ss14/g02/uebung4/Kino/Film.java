@@ -87,7 +87,12 @@ public class Film {
             if (film2.getLaufzeit() == null) {
                 return -1;
             }
-            return film1.getLaufzeit().compareTo(film2.getLaufzeit());
+
+            Integer filmNr1 = Integer.parseInt(film1.getLaufzeit());
+            Integer filmNr2 = Integer.parseInt(film2.getLaufzeit());
+
+            return filmNr1.compareTo(filmNr2);
+
         }
     }
 
@@ -113,13 +118,13 @@ public class Film {
 
     public String toString() {
         String ausgabe = this.startzeit + " -- " + this.name + " "
-                + this.altersfreigabe + " " + this.laufzeit;
+                + this.altersfreigabe + " " + this.laufzeit + "min";
         return ausgabe;
     }
 
     public String ohneUhrzeit() {
         String ausgabe = this.name + " " + this.altersfreigabe + " "
-                + this.laufzeit;
+                + this.laufzeit + "min";
         return ausgabe;
     }
 }

@@ -10,22 +10,22 @@ package de.hs_mannheim.tpe.imb.ss14.g02.uebung4.Collatz;
  */
 public class CollatzMethode implements Runnable {
 
-	private long start;
-	private long ende;
+	private long anfangswert;
+	private long schlusswert;
 
 	static Long iterierungen = 0L;
 
 	/**
 	 * Konstruktor der Klasse
 	 * 
-	 * @param start
+	 * @param anfangswert
 	 *            Startwert
-	 * @param ende
+	 * @param endwert
 	 *            Endwert
 	 */
-	public CollatzMethode(long start, long ende) {
-		this.start = start;
-		this.ende = ende;
+	public CollatzMethode(long anfangswert, long endwert) {
+		this.anfangswert = anfangswert;
+		this.schlusswert = endwert;
 	}
 
 	/**
@@ -34,16 +34,16 @@ public class CollatzMethode implements Runnable {
 	 */
 	public void run() {
 
-		for (long i = this.start; i <= this.ende; i++) {
+		for (long i = this.anfangswert; i <= this.schlusswert; i++) {
 
-			long temp = i;
+			long tmp = i;
 			long collatz = 0;
-			while (temp != 1) {
-				if (temp % 2 == 0) {
-					temp /= 2;
+			while (tmp != 1) {
+				if (tmp % 2 == 0) {
+					tmp /= 2;
 					collatz++;
 				} else {
-					temp = ((3 * temp) + 1);
+					tmp = ((3 * tmp) + 1);
 					collatz++;
 				}
 			}

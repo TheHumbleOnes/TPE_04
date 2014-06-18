@@ -6,7 +6,7 @@ package de.hs_mannheim.tpe.imb.ss14.g02.uebung4.Kino;
  * @author Michelle Heiler
  * @author Axel Duenninger
  * @author Luca Frank
- *
+ * 
  */
 public enum Sortieren {
 

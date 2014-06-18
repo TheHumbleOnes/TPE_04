@@ -18,15 +18,16 @@ public class Zeit {
 	 * 
 	 * @param zeit
 	 *            Eingegebene Startzeit
-	 * @throws wrongDateExeption
+	 * @throws illegalTimeException
 	 *             Fehlermeldung falls eine ungueltige Uhrzeit eingegeben wurde
 	 */
-	public Zeit(String zeit) throws wrongDateExeption {
+	public Zeit(String zeit) throws illegalTimeException {
 		if (zeit.length() > 5) {
-			throw new wrongDateExeption(
+			throw new illegalTimeException(
 					"Kein korrekte Zeitangabe, Text zu lang!");
 		} else if (!zeit.contains(":")) {
-			throw new wrongDateExeption("Kein korrektes Datumsformat angegeben");
+			throw new illegalTimeException(
+					"Kein korrektes Datumsformat angegeben");
 		} else {
 			int temphour = Integer.parseInt(zeit.substring(0, 2));
 			int tempmin = Integer.parseInt(zeit.substring(3));

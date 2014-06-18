@@ -8,13 +8,13 @@ package de.hs_mannheim.tpe.imb.ss14.g02.uebung4.Kino;
  * @author Luca Frank
  * 
  */
-public class wrongDateExeption extends Exception {
+public class illegalTimeException extends Exception {
 	/**
 	 * Gibt Exception aus
 	 * 
 	 * @param exeption
 	 */
-	public wrongDateExeption(String exeption) {
+	public illegalTimeException(String exeption) {
 		System.err.println(exeption);
 	}
 

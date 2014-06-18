@@ -11,7 +11,7 @@ import java.util.*;
  * 
  */
 public class Collatz {
-	private static LinkedList<Long> list = new LinkedList<Long>();
+	private static LinkedList<Long> folge = new LinkedList<Long>();
 
 	/**
 	 * Gibt die laengste Folge aus
@@ -19,43 +19,43 @@ public class Collatz {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//Zahl mit der längesten folge
+		// Zahl mit der längesten folge
 		coll(999999);
-		System.out.println(list);
-		System.out.println(list.size());
-		
-		
+		System.out.println(folge);
+		System.out.println(folge.size());
+
 	}
-	
+
 	/**
 	 * Getter-Methode um Liste mit laengster Folge zu bekommen
 	 * 
 	 * @return Liste
 	 */
-	public static LinkedList getList(){
-		return list;
+	public static LinkedList getList() {
+		return folge;
 	}
 
 	/**
 	 * Fuegt laengste Folge der Collatz-Reihe zu Liste hinzu
 	 * 
-	 * @param startwert Startwert der Collatz-Reihe
+	 * @param startwert
+	 *            Startwert der Collatz-Reihe
 	 * @return Laengste Folge in der Liste
 	 */
 	public static LinkedList coll(long startwert) {
-		
-		long temp = startwert;
-		while (temp != 1) {
-			if (temp % 2 == 0) {
-				temp /= 2;
-				list.add(temp);
+
+		long tmp = startwert;
+		while (tmp != 1) {
+			if (tmp % 2 == 0) {
+				tmp /= 2;
+				folge.add(tmp);
 			} else {
-				temp = ((3 * temp) + 1);
-				list.add(temp);
+				tmp = ((3 * tmp) + 1);
+				folge.add(tmp);
 			}
 		}
-		final ListIterator<Long> iterator = list.listIterator();
-		return list;
+		final ListIterator<Long> iterator = folge.listIterator();
+		return folge;
 	}
 
 }

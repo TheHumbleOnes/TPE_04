@@ -38,7 +38,8 @@ public enum Rating {
 	/**
 	 * Setter-Methode fuer die Altersfreigabe
 	 * 
-	 * @param freigabe Angepasste Altersfreigabe
+	 * @param freigabe
+	 *            Angepasste Altersfreigabe
 	 */
 	private void setRating(String freigabe) {
 		this.freigabe = freigabe;

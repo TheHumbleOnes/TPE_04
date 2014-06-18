@@ -25,9 +25,9 @@ public class Verwaltung {
 	 * Arrays gespeichert
 	 * 
 	 * @param args
-	 * @throws wrongDateExeption
+	 * @throws illegalTimeException
 	 */
-	public static void main(String[] args) throws wrongDateExeption {
+	public static void main(String[] args) throws illegalTimeException {
 
 		Saal blauerSaal = new Saal("Blauer Saal", 250);
 		Saal gruenerSaal = new Saal("Grüner Saal", 200);
@@ -133,28 +133,28 @@ public class Verwaltung {
 	 *            gewuenschter Saal
 	 */
 	public static void getFilmeFuerSaalMitZeiten(Saal k) {
-		int zaehler = 0;
-		for (int i = 0; i < filme.length; i++) {
-			if ((filme[i].getSaal()).equals(k.getName())) {
-				zaehler++;
+		int zaehler1 = 0;
+		for (int j = 0; j < filme.length; j++) {
+			if ((filme[j].getSaal()).equals(k.getName())) {
+				zaehler1++;
 			}
 		}
-		Film[] temp = new Film[zaehler];
-		int z = 0;
+		Film[] tmp = new Film[zaehler1];
+		int zaehler2 = 0;
 		for (int i = 0; i < filme.length; i++) {
 			if (filme[i].getSaal().equals(k.getName())) {
-				temp[z] = filme[i];
-				z++;
+				tmp[zaehler2] = filme[i];
+				zaehler2++;
 			}
 		}
 		Comparator<Film> startzeit = new Film.FilmStartzeit();
 		Arrays.sort(filme, startzeit);
 
 		System.out.println("Saal " + "'" + k.getName() + "'  " + "("
-				+ k.getSeats() + " Plaetze)");
+				+ k.getAnzahlPlaetze() + " Plaetze)");
 
-		for (int i = 0; i < temp.length; i++) {
-			System.out.println(temp[i].toString());
+		for (int i = 0; i < tmp.length; i++) {
+			System.out.println(tmp[i].toString());
 		}
 
 	}
@@ -174,13 +174,13 @@ public class Verwaltung {
 	 * @param s
 	 */
 	private static void getAlleFilme(Sortieren s) {
-		int count = 0;
+		int zaehler = 0;
 		Film[] einzelneFilme = new Film[0];
-		for (int j = 0; j < filme.length; j++) {
-			if (doppeltest(filme[j].getName(), einzelneFilme)) {
-				einzelneFilme = arrayVergroessern(einzelneFilme);
-				einzelneFilme[count] = filme[j];
-				count++;
+		for (int i = 0; i < filme.length; i++) {
+			if (filmnamenDoppeltPruefen(filme[i].getName(), einzelneFilme)) {
+				einzelneFilme = arrayAnpassen(einzelneFilme);
+				einzelneFilme[zaehler] = filme[i];
+				zaehler++;
 			}
 		}
 		switch (s) {
@@ -211,16 +211,16 @@ public class Verwaltung {
 	/**
 	 * Passt die Groesse des Arrays an, falls ein neuer Film hinzugefuegt wird
 	 * 
-	 * @param oldArray
+	 * @param altesArray
 	 *            Altes Filmearray
 	 * @return Neues Filmearray mit angepasster Groesse
 	 */
-	public static Film[] arrayVergroessern(Film[] oldArray) {
-		Film[] newArray = new Film[oldArray.length + 1];
-		for (int i = 0; i < oldArray.length; i++) {
-			newArray[i] = oldArray[i];
+	public static Film[] arrayAnpassen(Film[] altesArray) {
+		Film[] neuesArray = new Film[altesArray.length + 1];
+		for (int i = 0; i < altesArray.length; i++) {
+			neuesArray[i] = altesArray[i];
 		}
-		return newArray;
+		return neuesArray;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class Verwaltung {
 	 * @return true
 	 * @return false
 	 */
-	public static boolean doppeltest(String namen, Film[] filme) {
+	public static boolean filmnamenDoppeltPruefen(String namen, Film[] filme) {
 
 		for (int i = 0; i < filme.length; i++) {
 			if (namen.equals(filme[i].getName())) {

@@ -22,25 +22,25 @@ public class CollatzThread {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 
-		CollatzMethode c1 = new CollatzMethode(1, 250000);
-		CollatzMethode c2 = new CollatzMethode(250001, 500000);
-		CollatzMethode c3 = new CollatzMethode(500001, 750000);
-		CollatzMethode c4 = new CollatzMethode(700001, 1000000);
+		CollatzMethode reihe1 = new CollatzMethode(1, 1000000);
+		CollatzMethode reihe2 = new CollatzMethode(1000001, 1500000);
+		CollatzMethode reihe3 = new CollatzMethode(1500001, 1750000);
+		CollatzMethode reihe4 = new CollatzMethode(1750001, 2000000);
 
-		Thread t1 = new Thread(c1);
-		Thread t2 = new Thread(c2);
-		Thread t3 = new Thread(c3);
-		Thread t4 = new Thread(c4);
+		Thread thread1 = new Thread(reihe1);
+		Thread thread2 = new Thread(reihe2);
+		Thread thread3 = new Thread(reihe3);
+		Thread thread4 = new Thread(reihe4);
 
-		t1.start();
-		t2.start();
-		t3.start();
-		t4.start();
+		thread1.start();
+		thread2.start();
+		thread3.start();
+		thread4.start();
 
-		t1.join();
-		t2.join();
-		t3.join();
-		t4.join();
+		thread1.join();
+		thread2.join();
+		thread3.join();
+		thread4.join();
 
 		System.out.println("Längste Folge mit " + maxIterations
 				+ " Iterationen bei Zahl " + number);

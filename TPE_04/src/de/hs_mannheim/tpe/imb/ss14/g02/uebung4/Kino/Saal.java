@@ -10,19 +10,19 @@ package de.hs_mannheim.tpe.imb.ss14.g02.uebung4.Kino;
  */
 public class Saal {
 	private String name;
-	private int seats;
+	private int anzahlPlaetze;
 
 	/**
 	 * Konstruktor der Klasse
 	 * 
 	 * @param name
 	 *            Name des Saals
-	 * @param seats
+	 * @param anzahlPlaetze
 	 *            Anzahl der Sitze im Saal
 	 */
-	public Saal(String name, int seats) {
+	public Saal(String name, int anzahlPlaetze) {
 		this.name = name;
-		this.seats = seats;
+		this.anzahlPlaetze = anzahlPlaetze;
 	}
 
 	/**
@@ -39,8 +39,8 @@ public class Saal {
 	 * 
 	 * @return Anzahl der Sitze
 	 */
-	public int getSeats() {
-		return seats;
+	public int getAnzahlPlaetze() {
+		return anzahlPlaetze;
 	}
 
 	/**
@@ -48,7 +48,8 @@ public class Saal {
 	 * 
 	 */
 	public String toString() {
-		return ("Saal " + "'" + this.getName() + "'" + " (" + this.getSeats() + " Plaetze)");
+		return ("Saal " + "'" + this.getName() + "'" + " ("
+				+ this.getAnzahlPlaetze() + " Plaetze)");
 	}
 
 	/**
@@ -56,7 +57,7 @@ public class Saal {
 	 * 
 	 */
 	public int hashCode() {
-		return name.hashCode() ^ (int) Double.doubleToLongBits(seats);
+		return name.hashCode() ^ (int) Double.doubleToLongBits(anzahlPlaetze);
 	}
 
 	/**
@@ -64,7 +65,8 @@ public class Saal {
 	 * 
 	 */
 	public boolean equals(Object obj) {
-		if ((((Saal) obj).name.equals(name)) && (((Saal) obj).seats == seats))
+		if ((((Saal) obj).name.equals(name))
+				&& (((Saal) obj).anzahlPlaetze == anzahlPlaetze))
 			return true;
 		return false;
 	}

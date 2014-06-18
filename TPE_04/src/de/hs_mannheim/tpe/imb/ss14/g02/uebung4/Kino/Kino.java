@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class Kino {
 	private String name;
-	private String Stadt;
+	private String stadt;
 	private Film[] film;
 	private Saal[] saal;
 	private HashMap<Integer, Saal> saele = new HashMap<>();
@@ -31,7 +31,7 @@ public class Kino {
 	 */
 	public Kino(String name, String Stadt, Film[] film, Saal[] saal) {
 		this.name = name;
-		this.Stadt = Stadt;
+		this.stadt = Stadt;
 		this.saal = saal;
 		this.film = film;
 
@@ -71,7 +71,7 @@ public class Kino {
 	 * @return Stadt
 	 */
 	public String getStadt() {
-		return Stadt;
+		return stadt;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class Kino {
 	 * 
 	 */
 	public void gesamtesProgramm() {
-		System.out.println(name + " in " + Stadt);
+		System.out.println(name + " in " + stadt);
 		for (Saal s : saal) {
 
 			Verwaltung.getFilmeFuerSaalMitZeiten(s);

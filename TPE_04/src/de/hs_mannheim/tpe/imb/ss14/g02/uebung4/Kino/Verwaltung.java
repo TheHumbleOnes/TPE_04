@@ -83,15 +83,15 @@ public class Verwaltung {
         saele[2] = studio;
         saele[3] = kellerloch;
 
-//         cinemaxx.gesamtesProgramm();
-//         System.out.println();
-//         getAlleFilme(Sortieren.Name);
-//         System.out.println();
+         cinemaxx.gesamtesProgramm();
+         System.out.println();
+         getAlleFilme(Sortieren.Name);
+         System.out.println();
         getAlleFilme(Sortieren.Laufzeit);
-//         System.out.println();
-//         getAlleFilme(Sortieren.Altersfreigabe);
-//         System.out.println();
-//         getFilmeFuerSaalMitZeiten(gruenerSaal);
+         System.out.println();
+         getAlleFilme(Sortieren.Altersfreigabe);
+         System.out.println();
+         getFilmeFuerSaalMitZeiten(gruenerSaal);
 
 
     }

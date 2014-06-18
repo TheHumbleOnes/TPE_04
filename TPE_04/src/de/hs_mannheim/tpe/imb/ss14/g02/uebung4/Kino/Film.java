@@ -117,14 +117,14 @@ public class Film {
     }
 
     public String toString() {
-        String ausgabe = this.startzeit + " -- " + this.name + " "
-                + this.altersfreigabe + " " + this.laufzeit + "min";
+        String ausgabe = this.startzeit + " -- " + this.name
+                + this.altersfreigabe+ this.laufzeit;
         return ausgabe;
     }
 
     public String ohneUhrzeit() {
-        String ausgabe = this.name + " " + this.altersfreigabe + " "
-                + this.laufzeit + "min";
+        String ausgabe = this.name + this.altersfreigabe + " "
+                + this.laufzeit;
         return ausgabe;
     }
 }

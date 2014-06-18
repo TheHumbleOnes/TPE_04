@@ -33,10 +33,10 @@ public class test {
 	@Test
 	public void testOhneUhrzeit() throws wrongDateExeption {
 		Saal kellerloch = new Saal("Kellerloch", 30);
-		Film chocolat = new Film("Chocolat", " 121 min",
+		Film chocolat = new Film("Chocolat","121 min",
 		        Rating.AB_6, new Zeit("17:00"), kellerloch);
 		assertEquals(
-		        "Chocolat"+Rating.AB_6+ " 121 min",
+		        "Chocolat"+Rating.AB_6+" 121 min",
 		        chocolat.ohneUhrzeit());
 	}
 
